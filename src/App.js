@@ -20,7 +20,9 @@ function App() {
 
         <div style={{ flex: 1, padding: "20px", backgroundColor: "#fff" }}>
           <Routes>
-<Route path="/home" element={<Home />} />
+            {/* Home as default route */}
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </div>
       </div>
