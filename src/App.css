@@ -32,7 +32,7 @@
 }
 .sidebar {
   position: fixed;
-  width: 250px;
+  width: 200px;
   height: 100vh;
   background: linear-gradient(to bottom, #111, #1a1a1a);
   color: #fff;
@@ -407,4 +407,29 @@ textarea::placeholder {
   100% {
     transform: rotate(15deg);
   }
+}
+
+.scroll-area {
+  /* height: 80vh; Sidebar ke andar jitna space chahiye */
+  overflow-y: auto; /* Scrollbar enable */
+  padding-right: 10px; /* Stylish look */
+}
+
+/* Custom Scrollbar */
+.scroll-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+.scroll-area::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
