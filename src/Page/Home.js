@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
+import SendMail from "./SendMail";
 
 const boxes = [
   {
@@ -137,6 +138,8 @@ const Home = () => {
 
   return (
     <>
+      <SendMail />
+
       {/* Home Section */}
       <div id="home" className="container my-5">
         <div className="row g-4">
