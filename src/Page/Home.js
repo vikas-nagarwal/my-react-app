@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
-import SendMail from "./SendMail";
+// import "../App.css";
+const qulification = [
+  {
+    title: "04. MCA - S.S. Jain Subodh PG College, Jaipur",
+    description:
+      "Master of Computer Applications (2017-2019), Full Time, 78% marks.",
+  },
+  {
+    title: "05. BCA - S.S. Jain Subodh PG College, Jaipur",
+    description:
+      "Bachelor of Computer Applications (2014-2017), Full Time, 78% marks.",
+  },
+];
 
 const boxes = [
   {
@@ -138,7 +149,75 @@ const Home = () => {
 
   return (
     <>
-      <SendMail />
+      {/* about section */}
+      <div id="about" className="hero-section position-relative py-5">
+        <div className="stars"></div>
+        <div className="container position-relative">
+          <div className="row justify-content-center">
+            <div className="col-12 text-center">
+              <div className="profile-wrap mx-auto mb-4">
+                <div className="circle"></div>
+                <img
+                  src="Image\logo.png"
+                  alt="profile"
+                  className="rounded-circle profile-img"
+                />
+              </div>
+
+              {/* Text */}
+              <h1 className="title fw-bold text-white">I'm John Lee</h1>
+              <h2 className="subtitle mt-2 text-white">
+                A <span className="highlight">Software Engineer</span>
+              </h2>
+
+              <div className="row">
+                <div className="col-12 col-md-2"></div>
+                <div className="col-12 col-md-8">
+                  <p className="container">
+                    Passionate about crafting efficient and scalable software
+                    solutions Passionate about crafting efficient and scalable
+                    software solutions Passionate about crafting efficient and
+                    scalable software solutions
+                  </p>
+                </div>
+                <div className="col-12 col-md-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* about section end */}
+      <div id="skillsect" className="skillsModern py-5">
+        <div className="container">
+          <h2 className="skillsHeading text-center mb-5">
+            My <span>Skills</span>
+          </h2>
+
+          <div className="skillsWrapper">
+            {[
+              { icon: "bx bx-code-alt", name: ".NET" },
+              { icon: "bx bx-layer", name: ".NET Core" },
+              { icon: "bx bxl-angular", name: "Angular" },
+              { icon: "bx bx-cube", name: "C#" },
+              { icon: "bx bx-data", name: "SQL Server" },
+              { icon: "bx bxl-nodejs", name: "Node JS" },
+              { icon: "bx bxl-mongodb", name: "MongoDB" },
+              { icon: "bx bxl-html5", name: "HTML" },
+              { icon: "bx bxl-css3", name: "CSS" },
+              { icon: "bx bxl-bootstrap", name: "Bootstrap" },
+              { icon: "bx bxl-jquery", name: "jQuery" },
+              { icon: "bx bxl-hubspot", name: "HubSpot" },
+            ].map((skill, index) => (
+              <div className="skillBox" key={index}>
+                <i className={skill.icon}></i>
+                <p>{skill.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* profile section */}
 
       {/* Home Section */}
       <div id="home" className="container my-5">
@@ -154,98 +233,109 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
-      <div id="" contact className="section-header my-5">
-        <div className="container">
-          <div className="row d-flex justify-content-center">
-            {/* Left Side Text */}
-            <div className="col-12 col-md-6">
-              <div id="contact" className="form-container my-1">
-                <p>
-                  loeram*% Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut.
-                </p>
+      <div id="contact" className="contactSuperSection">
+        <div className="container py-5">
+          <div className="row align-items-center">
+            {/* LEFT SIDE */}
+            <div className="col-12 col-lg-5 mb-5">
+              <h2 className="superHeading">
+                Let’s <span>Work Together</span>
+              </h2>
+
+              <p className="superText">
+                Have an idea, project, or opportunity? I’m here to help you
+                build something amazing. Reach out and let’s turn your vision
+                into reality.
+              </p>
+
+              <div className="superInfoBox">
+                <i className="bx bx-mail-send"></i>
+                <div>
+                  <h5>Email</h5>
+                  <p>contact@example.com</p>
+                </div>
               </div>
-              <div id="contact" className="form-container my-1">
-                <p>
-                  loeram*% Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut.
-                </p>
+
+              <div className="superInfoBox">
+                <i className="bx bx-phone"></i>
+                <div>
+                  <h5>Phone</h5>
+                  <p>+91 98765 43210</p>
+                </div>
               </div>
-              <div id="contact" className="form-container my-1">
-                <p>
-                  loeram*% Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut.
-                </p>
+
+              <div className="superInfoBox">
+                <i className="bx bx-map"></i>
+                <div>
+                  <h5>Location</h5>
+                  <p>Jaipur, Rajasthan</p>
+                </div>
               </div>
             </div>
 
-            {/* Right Side Contact Form */}
-            <div className="col-12 col-md-6">
-              <div id="contact" className="form-container my-1">
-                <div className="form-header">
-                  <h1>Contact</h1>
-                </div>
+            {/* RIGHT FORM */}
+            <div className="col-12 col-lg-7">
+              <div className="superFormCard">
+                <h3 className="formMainTitle">Send a Message</h3>
 
-                <form className="contact-form" action="#" method="POST">
-                  <div className="input-group">
-                    <label htmlFor="fullName">Full Name</label>
-                    <input
-                      type="text"
-                      id="fullName"
-                      name="fullName"
-                      placeholder="Enter your full name"
-                      required
-                    />
+                <form className="superForm">
+                  <div className="floatingGroup">
+                    <input type="text" required />
+                    <label>Full Name</label>
                   </div>
 
-                  <div className="input-group">
-                    <label htmlFor="email">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="Enter your email address"
-                      required
-                    />
+                  <div className="floatingGroup">
+                    <input type="email" required />
+                    <label>Email Address</label>
                   </div>
 
-                  <div className="input-group">
-                    <label htmlFor="subject">Subject</label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      placeholder="What is this regarding?"
-                      required
-                    />
+                  <div className="floatingGroup">
+                    <input type="text" required />
+                    <label>Subject</label>
                   </div>
 
-                  <div className="input-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell us more about your inquiry or feedback..."
-                      required
-                    ></textarea>
+                  <div className="floatingGroup textareaGroup">
+                    <textarea required></textarea>
+                    <label>Your Message</label>
                   </div>
 
-                  <button type="submit" className="submit-btn">
-                    Send Message
-                  </button>
+                  <button className="superBtn">Send Message</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* qualification section */}
+      <section className="qulification-section py-5">
+        <div className="container">
+          <div className="row g-4">
+            <h3 class="text-center text-white"> qulification</h3>
+            <div className="row">
+              <div className="col-12 col-md-2"></div>
+              <div className="col-12 col-md-8">
+                <p className="text-center">
+                  Passionate about crafting efficient and scalable software
+                  solutions Passionate about crafting efficient and scalable
+                  software solutions Passionate about crafting efficient and
+                  scalable software solutions
+                </p>
+              </div>
+              <div className="col-12 col-md-2"></div>
+            </div>
+
+            {qulification.map((item, index) => (
+              <div key={index} className="col-12 col-md-6 col-lg-4">
+                <div className="qual-box p-4 rounded shadow">
+                  <h4 className="mb-2">{item.title}</h4>
+                  <p className="mb-0">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
+import { Link } from "react-router-dom";
+
 import { Link as ScrollLink } from "react-scroll";
 import {
   FaHome,
@@ -16,20 +18,6 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  let studentdata = {
-    a: 5,
-    b: 10,
-    c: 15,
-  };
-
-  console.log(studentdata.c); // 15
-  studentdata.c++;
-  console.log(studentdata.c); // 16
-  ++studentdata.c;
-  console.log(studentdata.c); // 17
-  studentdata.c--;
-  console.log(studentdata.c); // 16
-
   return (
     <>
       {/* Mobile Hamburger Button */}
@@ -40,39 +28,63 @@ export const Header = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="profile">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Profile"
-            className="profile-img"
-          />
+          <img src="Image/logo.png" alt="Profile" className="profile-img" />
         </div>
+
         {/* Scrollbar Container */}
         <div className="scroll-area">
           <nav className="menu">
             <ul>
+              <li
+                className="menu-item"
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleMenu();
+                  document
+                    .querySelector("#about")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                <FaHome /> <span>Introduction</span>
+              </li>
+
               <li>
                 <ScrollLink
-                  to="home"
+                  to="skillsect"
                   smooth={true}
-                  duration={50}
+                  duration={500}
                   offset={-80}
                   spy={true}
                   onClick={toggleMenu}
                 >
-                  <FaHome /> <span>Introduction</span>
+                  <FaGift /> <span>MY Skill</span>
                 </ScrollLink>
               </li>
 
+              {/* Work History */}
               <li>
-                <FaGift /> <span>Education</span>
-              </li>
-              <li>
-                <FaGift /> <span>Education</span>
-              </li>
-              <li>
-                <FaGift /> <span>Education</span>
+                <FaGift /> <span>Work History</span>
               </li>
 
+              {/* Qualification */}
+              <li>
+                <FaGift /> <span>Qualification</span>
+              </li>
+
+              {/* Correct Working Link */}
+              <li>
+                <Link
+                  to={{
+                    pathname: "/some/path",
+                    search: "?query=string",
+                    hash: "#hash",
+                  }}
+                >
+                  <FaGift /> <span>Go To Page</span>
+                </Link>
+              </li>
+
+              {/* Portfolio */}
               <li>
                 <ScrollLink
                   to="portfolio"
@@ -86,6 +98,7 @@ export const Header = () => {
                 </ScrollLink>
               </li>
 
+              {/* Resume */}
               <li>
                 <ScrollLink
                   to="resume"
@@ -99,10 +112,7 @@ export const Header = () => {
                 </ScrollLink>
               </li>
 
-              <li>
-                <FaUsers /> <span>Protfolio</span>
-              </li>
-
+              {/* Contact */}
               <li>
                 <ScrollLink
                   to="contact"
