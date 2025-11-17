@@ -1,0 +1,69 @@
+/* WorkHistory.css */
+
+.container {
+  max-width: 1000px;
+}
+
+h1 {
+  font-weight: 700;
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #007bff; /* Bootstrap primary color */
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555; /* overrides global p color inside cards */
+}
+
+/* Fade-in from bottom animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card-body {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0; /* initial state before animation */
+}
+
+/* Optional: delay each card differently */
+.card:nth-child(1) .card-body {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) .card-body {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(3) .card-body {
+  animation-delay: 0.5s;
+}
+
+.card-body:hover {
+  /* transform: translateY(-10px) scale(1.05); */
+  border-color: #00eaff;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.4);
+}

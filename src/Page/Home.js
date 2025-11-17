@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "../App.css";
+import "../App.css";
+import "../wordhistory/css/wordhistory.css";
 const qulification = [
   {
     title: "04. MCA - S.S. Jain Subodh PG College, Jaipur",
@@ -147,6 +148,22 @@ const Home = () => {
     }
   };
 
+  const workHistory = [
+    {
+      company: "SixStep Solutions",
+      role: "Software Developer",
+      duration: "2023 - Present",
+      description:
+        "Contributing to innovative web and software solutions, improving system performance, and collaborating with cross-functional teams.",
+    },
+    {
+      company: "Dotsquares",
+      role: "Software Developer",
+      duration: "2021 - 2023",
+      description:
+        "Worked on various projects, honed skills in React and JavaScript, and collaborated with talented teams to deliver high-quality solutions.",
+    },
+  ];
   return (
     <>
       {/* about section */}
@@ -165,7 +182,7 @@ const Home = () => {
               </div>
 
               {/* Text */}
-              <h1 className="title fw-bold text-white">I'm John Lee</h1>
+              <h1 className="title fw-bold text-white">I'm Hemant Koolwal!</h1>
               <h2 className="subtitle mt-2 text-white">
                 A <span className="highlight">Software Engineer</span>
               </h2>
@@ -174,10 +191,10 @@ const Home = () => {
                 <div className="col-12 col-md-2"></div>
                 <div className="col-12 col-md-8">
                   <p className="container">
-                    Passionate about crafting efficient and scalable software
-                    solutions Passionate about crafting efficient and scalable
-                    software solutions Passionate about crafting efficient and
-                    scalable software solutions
+                    Hi, I'm Hemant Koolwal! I'm a passionate software developer
+                    based in Jaipur, Rajasthan, India. With a strong background
+                    in ASP.NET, .NET Core, MVC, SQL Server, and front-end
+                    technologies like jQuer
                   </p>
                 </div>
                 <div className="col-12 col-md-2"></div>
@@ -218,6 +235,24 @@ const Home = () => {
       </div>
 
       {/* profile section */}
+
+      <div className="container mt-5">
+        <h1 className="text-center mb-4">Work History</h1>
+        <div className="row">
+          {workHistory.map((job, index) => (
+            <div key={index} className="col-12 col-md-6 mb-4">
+              <div className="card shadow-sm h-100">
+                <div className="card-body">
+                  <h4 className="card-title text-white">{job.company}</h4>
+                  <h6 className="text-white">{job.role}</h6>
+                  <p className="text-white">{job.duration}</p>
+                  <p className="card-text text-white">{job.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Home Section */}
       <div id="home" className="container my-5">
