@@ -237,7 +237,7 @@ const Home = () => {
 
       {/* profile section */}
 
-      <div id= "work" className="container mt-5">
+      <div id="work" className="container mt-5">
         <h1 className="text-center mb-4">Work History</h1>
         <div className="row">
           {workHistory.map((job, index) => (
@@ -344,28 +344,31 @@ const Home = () => {
       </div>
 
       {/* qualification section */}
-      <section className="qulification-section py-5">
+      <section className="qualification-section py-5">
         <div className="container">
           <div className="row g-4">
-            <h3 class="text-center text-white"> qulification</h3>
-            <div className="row">
-              <div className="col-12 col-md-2"></div>
+            {/* Heading */}
+            <h3 className="text-center text-white fw-bold mb-3">
+              <span className="qual-gradient">Qualification</span>
+            </h3>
+
+            {/* Paragraph */}
+            <div className="row justify-content-center">
               <div className="col-12 col-md-8">
-                <p className="text-center">
+                <p className="text-center text-light">
                   Passionate about crafting efficient and scalable software
-                  solutions Passionate about crafting efficient and scalable
-                  software solutions Passionate about crafting efficient and
-                  scalable software solutions
+                  solutions that deliver real value. Dedicated to continuous
+                  learning and improvement in every project.
                 </p>
               </div>
-              <div className="col-12 col-md-2"></div>
             </div>
 
+            {/* Cards */}
             {qulification.map((item, index) => (
               <div key={index} className="col-12 col-md-6 col-lg-4">
-                <div className="qual-box p-4 rounded shadow">
+                <div className="qual-box p-4 rounded-4 shadow-lg text-white">
                   <h4 className="mb-2">{item.title}</h4>
-                  <p className="mb-0">{item.description}</p>
+                  <p className="mb-0 opacity-75">{item.description}</p>
                 </div>
               </div>
             ))}

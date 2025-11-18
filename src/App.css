@@ -286,7 +286,6 @@ p {
 .contactSuperSection {
   background: black;
   color: #fff;
-  padding: 70px 0;
   position: relative;
 }
 
@@ -589,4 +588,26 @@ p {
 .skillsWrapper:hover {
   color: #09abba; /* hover par color change */
   border-color: #00eaff; /* hover par border color change */
+}
+.qualification-section {
+  background: black;
+}
+
+.qual-gradient {
+  background: linear-gradient(90deg, #00eaff, #09abba);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qual-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease-in-out;
+}
+
+.qual-box:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #00eaff;
+  box-shadow: 0 10px 25px rgba(0, 238, 255, 0.3);
 }
