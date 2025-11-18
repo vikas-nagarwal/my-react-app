@@ -1,9 +1,9 @@
 /* App.css */
 
-
-  body,div {
-    background-color: black !important;
-  }
+body,
+div {
+  background-color: black !important;
+}
 
 h1,
 h2,
@@ -284,7 +284,7 @@ p {
 }
 /* MAIN SECTION */
 .contactSuperSection {
-  background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+  background: black;
   color: #fff;
   padding: 70px 0;
   position: relative;
@@ -444,7 +444,7 @@ p {
 /* Firefox Scrollbar */
 .scroll-area {
   scrollbar-width: thin;
-  scrollbar-color: #8a2be2 rgba(255, 255, 255, 0.1);
+  scrollbar-color: #0abcbc rgba(255, 255, 255, 0.1);
 }
 .qualification-section {
   background-color: #0d0d0d;
@@ -488,7 +488,7 @@ p {
   font-size: 20px;
 }
 .qulification-section {
-  background: #0d0d0d;
+  background: black;
 }
 
 .qulification-section .qual-box {
@@ -503,4 +503,90 @@ p {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 224, 255, 0.3);
   border-left-color: #00ff9d;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.roleText {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffb84d; /* golden tone */
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: roleFadeUp 1.6s ease forwards;
+}
+
+.roleText::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: shineMove 2s infinite ease-in-out 1.8s;
+}
+
+@keyframes roleFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shineMove {
+  0% {
+    left: -120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+.nameTitle {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: nameFadeUp 1.4s ease forwards;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes nameFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.skillsWrapper {
+  /* color: red; */
+  border: solid;
+  padding: 20px;
+}
+
+.skillsWrapper:hover {
+  color: #09abba; /* hover par color change */
+  border-color: #00eaff; /* hover par border color change */
 }

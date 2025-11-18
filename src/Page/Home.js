@@ -182,9 +182,10 @@ const Home = () => {
               </div>
 
               {/* Text */}
-              <h1 className="title fw-bold text-white">I'm Hemant Koolwal!</h1>
-              <h2 className="subtitle mt-2 text-white">
-                A <span className="highlight">Software Engineer</span>
+              <h1 className="nameTitle">I'm Hemant Koolwal!</h1>
+
+              <h2 className="roleTitle">
+                <span className="roleText">Software Engineer</span>
               </h2>
 
               <div className="row">
@@ -236,7 +237,7 @@ const Home = () => {
 
       {/* profile section */}
 
-      <div className="container mt-5">
+      <div id= "work" className="container mt-5">
         <h1 className="text-center mb-4">Work History</h1>
         <div className="row">
           {workHistory.map((job, index) => (

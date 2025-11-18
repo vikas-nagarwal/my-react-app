@@ -9,6 +9,7 @@ import {
   FaLayerGroup,
   FaFileAlt,
   FaUsers,
+  FaBriefcase,
   FaPhoneAlt,
   FaBars,
   FaTimes,
@@ -47,7 +48,6 @@ export const Header = () => {
               >
                 <FaHome /> <span>Introduction</span>
               </li>
-
               <li>
                 <ScrollLink
                   to="skillsect"
@@ -61,16 +61,23 @@ export const Header = () => {
                 </ScrollLink>
               </li>
 
-              {/* Work History */}
               <li>
-                <FaGift /> <span>Work History</span>
+                <ScrollLink
+                  to="work"
+                  smooth={true}
+                  duration={500}
+                  offset={-80}
+                  spy={true}
+                  onClick={toggleMenu}
+                >
+                  <FaBriefcase /> <span>Work History</span>
+                </ScrollLink>
               </li>
 
               {/* Qualification */}
               <li>
                 <FaGift /> <span>Qualification</span>
               </li>
-
               {/* Correct Working Link */}
               <li>
                 <Link
@@ -83,7 +90,6 @@ export const Header = () => {
                   <FaGift /> <span>Go To Page</span>
                 </Link>
               </li>
-
               {/* Portfolio */}
               <li>
                 <ScrollLink
@@ -97,7 +103,6 @@ export const Header = () => {
                   <FaLayerGroup /> <span>Portfolio</span>
                 </ScrollLink>
               </li>
-
               {/* Resume */}
               <li>
                 <ScrollLink
@@ -111,7 +116,6 @@ export const Header = () => {
                   <FaFileAlt /> <span>Skills</span>
                 </ScrollLink>
               </li>
-
               {/* Contact */}
               <li>
                 <ScrollLink
