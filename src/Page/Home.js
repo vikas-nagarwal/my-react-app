@@ -2,6 +2,69 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
+
+// let viks = () => {
+//   let name = "Hemant Koolwal";
+//   let age = 26;
+//   function details() {
+//     if (name === "Hemant Koolwal") {
+//       console.log("Correct name.");
+//     } else {
+//       console.log("Wrong name.");
+//     }
+//     if (age >= 18) {
+//       return "You are eligible to vote.";
+//     } else {
+//       return "You are not eligible to vote.";
+//     }
+//   }
+//   return details();
+// };
+
+// console.log(viks());
+// const result = viks();
+let sutdentdata = () => {
+  let name = "vikas nagarwal";
+  let age = 26;
+  let id = 25;
+  return { name, age, id };
+};
+let returss = sutdentdata();
+console.log(sutdentdata());
+
+let viks = () => {
+  let name = "Hemant Koolwal";
+  let age = 26;
+
+  function details() {
+    let nameStatus = "";
+    if (name === "Hemant Koolwal") {
+      nameStatus = "Correct name.";
+    } else {
+      nameStatus = "Wrong name.";
+    }
+
+    let voteStatus = "";
+    if (age >= 18) {
+      voteStatus = "You are eligible to vote.";
+    } else {
+      voteStatus = "You are not eligible to vote.";
+    }
+
+    return {
+      name,
+      age,
+      nameStatus,
+      voteStatus,
+    };
+  }
+
+  return details();
+};
+
+const result = viks();
+console.log(result);
+
 const qulification = [
   {
     title: "04. MCA - S.S. Jain Subodh PG College, Jaipur",
@@ -164,8 +227,32 @@ const Home = () => {
         "Worked on various projects, honed skills in React and JavaScript, and collaborated with talented teams to deliver high-quality solutions.",
     },
   ];
+
   return (
     <>
+      <div className="container">
+        <div className="row d-flex justify-content-center mt-5 p-4 bg-light rounded shadow">
+          <div className="col-sm-6 col-12">
+            <h2>User Details</h2>
+            <p>
+              <strong>Name:</strong> {result.name}
+            </p>
+          </div>
+
+          <div className="col-sm-6 col-12">
+            <p>
+              <strong>Age:</strong> {result.age}
+            </p>
+            <p>
+              <strong>Name Status:</strong> {result.nameStatus}
+            </p>
+            <p>
+              <strong>Vote Status:</strong> {result.voteStatus}
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* about section */}
       <div id="about" className="hero-section position-relative py-5">
         <div className="stars"></div>
