@@ -3,67 +3,93 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
 
+// const collageInformation = () => {
+//   const collageName = "S.S. Jain Subodh PG College, Jaipur";
+//   const degree = "MCA - Master of Computer Applications";
+//   const year = 2019;
+//   const age = 26;
+
+//   // Status function
+//   function status() {
+//     let result = ""; // declare variable
+//     if (year >= 2019 && degree.includes("MCA")) {
+//       result = "I have completed my MCA degree.";
+//     } else if (year >= 2019) {
+//       result = "I have completed my degree.";
+//     } else if (year < 2019 && age >= 18) {
+//       result = "I am still pursuing my degree and eligible for internships.";
+//     } else {
+//       result = "I am still pursuing my degree.";
+//     }
+//     return result;
+//   }
+
+//   // Remarks based on age
+//   function remarks() {
+//     if (age < 20) {
+//       return "Young and energetic!";
+//     } else if (age >= 20 && age <= 25) {
+//       return "Experienced and skilled.";
+//     } else {
+//       return "Senior professional.";
+//     }
+//   }
+
+//   return {
+//     collageName,
+//     degree,
+//     year,
+//     age,
+//     status: status(),
+//     remarks: remarks(),
+//   };
+// };
+
+// // Call the function
+// const rescult = collageInformation();
+// console.log(rescult);
+
+// let sutdentdata = () => {
+//   let name = "vikas nagarwal";
+//   let age = 26;
+//   let id = 25;
+//   return { name, age, id };
+// };
+// let returss = sutdentdata();
+// console.log(sutdentdata());
+
 // let viks = () => {
 //   let name = "Hemant Koolwal";
 //   let age = 26;
+
 //   function details() {
+//     let nameStatus = "";
 //     if (name === "Hemant Koolwal") {
-//       console.log("Correct name.");
+//       nameStatus = "Correct name.";
 //     } else {
-//       console.log("Wrong name.");
+//       nameStatus = "Wrong name.";
 //     }
+
+//     let voteStatus = "";
 //     if (age >= 18) {
-//       return "You are eligible to vote.";
+//       voteStatus = "You are eligible to vote.";
 //     } else {
-//       return "You are not eligible to vote.";
+//       voteStatus = "You are not eligible to vote.";
 //     }
+
+//     return {
+//       name,
+//       age,
+//       nameStatus,
+//       voteStatus,
+//     };
 //   }
+
 //   return details();
 // };
 
-// console.log(viks());
 // const result = viks();
-let sutdentdata = () => {
-  let name = "vikas nagarwal";
-  let age = 26;
-  let id = 25;
-  return { name, age, id };
-};
-let returss = sutdentdata();
-console.log(sutdentdata());
-
-let viks = () => {
-  let name = "Hemant Koolwal";
-  let age = 26;
-
-  function details() {
-    let nameStatus = "";
-    if (name === "Hemant Koolwal") {
-      nameStatus = "Correct name.";
-    } else {
-      nameStatus = "Wrong name.";
-    }
-
-    let voteStatus = "";
-    if (age >= 18) {
-      voteStatus = "You are eligible to vote.";
-    } else {
-      voteStatus = "You are not eligible to vote.";
-    }
-
-    return {
-      name,
-      age,
-      nameStatus,
-      voteStatus,
-    };
-  }
-
-  return details();
-};
-
-const result = viks();
-console.log(result);
+// console.log(result);
 
 const qulification = [
   {
@@ -230,7 +256,33 @@ const Home = () => {
 
   return (
     <>
-      <div className="container">
+      {/* <div className="container mt-5">
+        <div className="row d-flex justify-content-center p-4 bg-light rounded shadow">
+          <div className="col-sm-6 col-12">
+            <h2>User Details</h2>
+            <p>
+              <strong>College:</strong> {result.collageName}
+            </p>
+            <p>
+              <strong>Degree:</strong> {result.degree}
+            </p>
+            <p>
+              <strong>Year:</strong> {result.year}
+            </p>
+            <p>
+              <strong>Age:</strong> {result.age}
+            </p>
+            <p>
+              <strong>Status:</strong> {result.status}
+            </p>
+            <p>
+              <strong>Remarks:</strong> {result.remarks}
+            </p>
+          </div>
+        </div>
+      </div> */}
+
+      {/* <div className="container">
         <div className="row d-flex justify-content-center mt-5 p-4 bg-light rounded shadow">
           <div className="col-sm-6 col-12">
             <h2>User Details</h2>
@@ -251,8 +303,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
-
+      </div> */}
       {/* about section */}
       <div id="about" className="hero-section position-relative py-5">
         <div className="stars"></div>
@@ -321,9 +372,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       {/* profile section */}
-
       <div id="work" className="container mt-5">
         <h1 className="text-center mb-4">Work History</h1>
         <div className="row">
@@ -341,7 +390,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-
       {/* Home Section */}
       <div id="home" className="container my-5">
         <div className="row g-4">
@@ -355,7 +403,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-
       <div id="contact" className="contactSuperSection">
         <div className="container py-5">
           <div className="row align-items-center">
@@ -429,7 +476,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       {/* qualification section */}
       <section className="qualification-section py-5">
         <div className="container">
