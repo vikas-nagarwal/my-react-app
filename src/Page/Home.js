@@ -40,14 +40,15 @@ const collageInformation = () => {
     degree,
     year,
     age,
-    status: status(),
-    remarks: remarks(),
+    status,
+    remarks,
   };
 };
 
 // Call the function
 const rescult = collageInformation();
-console.log(rescult);
+console.log(rescult.status());
+console.log(rescult.remarks());
 
 let sutdentdata = () => {
   let name = "vikas nagarwal";
@@ -602,11 +603,11 @@ const Home = () => {
               </p>
 
               <div className="alert alert-info mt-3">
-                <strong>Status:</strong> {rescult.status}
+                <p>Status: {rescult.status()}</p> // ✅ lowercase 's'
               </div>
 
               <div className="alert alert-success">
-                <strong>Remarks:</strong> {rescult.remarks}
+                <p>Remarks: {rescult.remarks()}</p> // ✅ lowercase
               </div>
             </div>
           </div>
