@@ -29,7 +29,7 @@ export const Header = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="profile">
-          <img src="\Image\logo.png" alt="Profile" className="profile-img" />
+          <img src="/Image/logo.png" className="profile-img" />
         </div>
 
         {/* Scrollbar Container */}
