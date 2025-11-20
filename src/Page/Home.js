@@ -578,35 +578,35 @@ const Home = () => {
         </section>
       </div>
 
-      <div class="container mt-5">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="card shadow-lg p-4 rounded-4 border-0">
-              <h3 class="text-center mb-3 text-primary fw-bold">
+      <div className="container mt-5">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card shadow-lg p-4 rounded-4 border-0">
+              <h3 className="text-center mb-3 text-primary fw-bold">
                 College Information
               </h3>
 
               <hr />
 
               <p>
-                <strong>🏫 College Name:</strong> ${rescult.collageName}
+                <strong>🏫 College Name:</strong> {rescult.collageName}
               </p>
               <p>
-                <strong>🎓 Degree:</strong> ${rescult.degree}
+                <strong>🎓 Degree:</strong> {rescult.degree}
               </p>
               <p>
-                <strong>📅 Year:</strong> ${rescult.year}
+                <strong>📅 Year:</strong> {rescult.year}
               </p>
               <p>
-                <strong>👤 Age:</strong> ${rescult.age}
+                <strong>👤 Age:</strong> {rescult.age}
               </p>
 
-              <div class="alert alert-info mt-3">
-                <strong>Status:</strong> ${rescult.status}
+              <div className="alert alert-info mt-3">
+                <strong>Status:</strong> {rescult.status}
               </div>
 
-              <div class="alert alert-success">
-                <strong>Remarks:</strong> ${rescult.remarks}
+              <div className="alert alert-success">
+                <strong>Remarks:</strong> {rescult.remarks}
               </div>
             </div>
           </div>
