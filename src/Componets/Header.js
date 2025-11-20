@@ -29,30 +29,30 @@ export const Header = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="profile">
-          <img src="Image/logo.png" alt="Profile" className="profile-img" />
+          <img src="\Image\logo.png" alt="Profile" className="profile-img" />
         </div>
 
         {/* Scrollbar Container */}
         <div className="scroll-area">
           <nav className="menu">
             <ul>
-              <li
-                className="menu-item"
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleMenu();
-                  document
-                    .querySelector("#about")
-                    .scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                <FaHome /> <span>Introduction</span>
+              <li className="menu-item">
+                <ScrollLink
+                  to="about"
+                  smooth={true}
+                  duration={200}
+                  offset={-80}
+                  spy={true}
+                  onClick={toggleMenu}
+                >
+                  <FaHome /> <span>Introduction</span>
+                </ScrollLink>
               </li>
               <li>
                 <ScrollLink
                   to="skillsect"
                   smooth={true}
-                  duration={500}
+                  duration={200}
                   offset={-80}
                   spy={true}
                   onClick={toggleMenu}
@@ -60,42 +60,36 @@ export const Header = () => {
                   <FaGift /> <span>MY Skill</span>
                 </ScrollLink>
               </li>
-
               <li>
                 <ScrollLink
                   to="work"
                   smooth={true}
-                  duration={500}
+                  duration={200}
                   offset={-80}
                   spy={true}
                   onClick={toggleMenu}
                 >
-                  <FaBriefcase /> <span>Work History</span>
+                  <FaBriefcase /> <span>Work</span>
+                </ScrollLink>
+              </li>
+              <li>
+                <ScrollLink
+                  to="qualification"
+                  smooth={true}
+                  duration={200}
+                  offset={-80}
+                  spy={true}
+                  onClick={toggleMenu}
+                >
+                  <FaGift /> <span>qualification</span>
                 </ScrollLink>
               </li>
 
-              {/* Qualification */}
-              <li>
-                <FaGift /> <span>Qualification</span>
-              </li>
-              {/* Correct Working Link */}
-              <li>
-                <Link
-                  to={{
-                    pathname: "/some/path",
-                    search: "?query=string",
-                    hash: "#hash",
-                  }}
-                >
-                  <FaGift /> <span>Go To Page</span>
-                </Link>
-              </li>
-              {/* Portfolio */}
               <li>
                 <ScrollLink
-                  to="portfolio"
+                  to="protefolio"
                   smooth={true}
-                  duration={600}
+                  duration={200}
                   offset={-80}
                   spy={true}
                   onClick={toggleMenu}
@@ -103,25 +97,12 @@ export const Header = () => {
                   <FaLayerGroup /> <span>Portfolio</span>
                 </ScrollLink>
               </li>
-              {/* Resume */}
-              <li>
-                <ScrollLink
-                  to="resume"
-                  smooth={true}
-                  duration={600}
-                  offset={-80}
-                  spy={true}
-                  onClick={toggleMenu}
-                >
-                  <FaFileAlt /> <span>Skills</span>
-                </ScrollLink>
-              </li>
-              {/* Contact */}
+
               <li>
                 <ScrollLink
                   to="contact"
                   smooth={true}
-                  duration={50}
+                  duration={200}
                   offset={-80}
                   spy={true}
                   onClick={toggleMenu}

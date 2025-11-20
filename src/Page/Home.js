@@ -3,93 +3,118 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
 
-// const collageInformation = () => {
-//   const collageName = "S.S. Jain Subodh PG College, Jaipur";
-//   const degree = "MCA - Master of Computer Applications";
-//   const year = 2019;
-//   const age = 26;
+const collageInformation = () => {
+  const collageName = "S.S. Jain Subodh PG College, Jaipur";
+  const degree = "MCA - Master of Computer Applications";
+  const year = 2019;
+  const age = 26;
 
-//   // Status function
-//   function status() {
-//     let result = ""; // declare variable
-//     if (year >= 2019 && degree.includes("MCA")) {
-//       result = "I have completed my MCA degree.";
-//     } else if (year >= 2019) {
-//       result = "I have completed my degree.";
-//     } else if (year < 2019 && age >= 18) {
-//       result = "I am still pursuing my degree and eligible for internships.";
-//     } else {
-//       result = "I am still pursuing my degree.";
-//     }
-//     return result;
-//   }
+  // Status function
+  function status() {
+    let result = ""; // declare variable
+    if (year >= 2019 && degree.includes("MCA")) {
+      result = "I have completed my MCA degree.";
+    } else if (year >= 2019) {
+      result = "I have completed my degree.";
+    } else if (year < 2019 && age >= 18) {
+      result = "I am still pursuing my degree and eligible for internships.";
+    } else {
+      result = "I am still pursuing my degree.";
+    }
+    return result;
+  }
 
-//   // Remarks based on age
-//   function remarks() {
-//     if (age < 20) {
-//       return "Young and energetic!";
-//     } else if (age >= 20 && age <= 25) {
-//       return "Experienced and skilled.";
-//     } else {
-//       return "Senior professional.";
-//     }
-//   }
+  // Remarks based on age
+  function remarks() {
+    if (age < 20) {
+      return "Young and energetic!";
+    } else if (age >= 20 && age <= 25) {
+      return "Experienced and skilled.";
+    } else {
+      return "Senior professional.";
+    }
+  }
 
-//   return {
-//     collageName,
-//     degree,
-//     year,
-//     age,
-//     status: status(),
-//     remarks: remarks(),
-//   };
-// };
+  return {
+    collageName,
+    degree,
+    year,
+    age,
+    status: status(),
+    remarks: remarks(),
+  };
+};
 
-// // Call the function
-// const rescult = collageInformation();
-// console.log(rescult);
+// Call the function
+const rescult = collageInformation();
+console.log(rescult);
 
-// let sutdentdata = () => {
-//   let name = "vikas nagarwal";
-//   let age = 26;
-//   let id = 25;
-//   return { name, age, id };
-// };
-// let returss = sutdentdata();
-// console.log(sutdentdata());
+let sutdentdata = () => {
+  let name = "vikas nagarwal";
+  let age = 26;
+  let id = 25;
+  return { name, age, id };
+};
+let returss = sutdentdata();
+console.log(sutdentdata());
 
-// let viks = () => {
-//   let name = "Hemant Koolwal";
-//   let age = 26;
+let viks = () => {
+  let name = "Hemant Koolwal";
+  let age = 26;
 
-//   function details() {
-//     let nameStatus = "";
-//     if (name === "Hemant Koolwal") {
-//       nameStatus = "Correct name.";
-//     } else {
-//       nameStatus = "Wrong name.";
-//     }
+  function details() {
+    let nameStatus = "";
+    if (name === "Hemant Koolwal") {
+      nameStatus = "Correct name.";
+    } else {
+      nameStatus = "Wrong name.";
+    }
 
-//     let voteStatus = "";
-//     if (age >= 18) {
-//       voteStatus = "You are eligible to vote.";
-//     } else {
-//       voteStatus = "You are not eligible to vote.";
-//     }
+    let voteStatus = "";
+    if (age >= 18) {
+      voteStatus = "You are eligible to vote.";
+    } else {
+      voteStatus = "You are not eligible to vote.";
+    }
 
-//     return {
-//       name,
-//       age,
-//       nameStatus,
-//       voteStatus,
-//     };
-//   }
+    return {
+      name,
+      age,
+      nameStatus,
+      voteStatus,
+    };
+  }
 
-//   return details();
-// };
+  return details();
+};
 
-// const result = viks();
-// console.log(result);
+const result = viks();
+console.log(result);
+
+const projects = [
+  {
+    title: "Project One",
+    image: "https://via.placeholder.com/600x400",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    link: "#",
+  },
+
+  {
+    title: "Project Two",
+    image: "https://via.placeholder.com/600x400",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    link: "#",
+  },
+  {
+    title: "Project Three",
+    image: "https://via.placeholder.com/600x400",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+    link: "#",
+  },
+];
 
 const qulification = [
   {
@@ -477,37 +502,116 @@ const Home = () => {
         </div>
       </div>
       {/* qualification section */}
-      <section className="qualification-section py-5">
-        <div className="container">
-          <div className="row g-4">
-            {/* Heading */}
-            <h3 className="text-center text-white fw-bold mb-3">
-              <span className="qual-gradient">Qualification</span>
-            </h3>
+      <div id="qualification">
+        <section className="qualification-section py-5">
+          <div className="container">
+            <div className="row g-4">
+              {/* Heading */}
+              <h3 className="text-center text-white fw-bold mb-3">
+                <span className="qual-gradient">Qualification</span>
+              </h3>
 
-            {/* Paragraph */}
-            <div className="row justify-content-center">
-              <div className="col-12 col-md-8">
-                <p className="text-center text-light">
-                  Passionate about crafting efficient and scalable software
-                  solutions that deliver real value. Dedicated to continuous
-                  learning and improvement in every project.
-                </p>
+              {/* Paragraph */}
+              <div className="row justify-content-center">
+                <div className="col-12 col-md-8">
+                  <p className="text-center text-light">
+                    Passionate about crafting efficient and scalable software
+                    solutions that deliver real value. Dedicated to continuous
+                    learning and improvement in every project.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Cards */}
-            {qulification.map((item, index) => (
-              <div key={index} className="col-12 col-md-6 col-lg-4">
-                <div className="qual-box p-4 rounded-4 shadow-lg text-white">
-                  <h4 className="mb-2">{item.title}</h4>
-                  <p className="mb-0 opacity-75">{item.description}</p>
+              {/* Cards */}
+              {qulification.map((item, index) => (
+                <div key={index} className="col-12 col-md-6 col-lg-4">
+                  <div className="qual-box p-4 rounded-4 shadow-lg text-white">
+                    <h4 className="mb-2">{item.title}</h4>
+                    <p className="mb-0 opacity-75">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* work section */}
+
+      <div id="protefolio">
+        <section id="portfolio" className="px-10 py-20 bg-gray-50">
+          <h2 className="text-3xl font-bold text-orange-500 mb-3">Portfolio</h2>
+          <p className="text-gray-600 mb-10">
+            Some of my recent design & development work.
+          </p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="bg-black rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              >
+                <img
+                  src={project.image}
+                  alt=""
+                  className="w-full h-48 object-cover"
+                />
+
+                <div>
+                  <h3 className="text-xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-gray-600 mt-2">{project.description}</p>
+                  <a
+                    href={project.link}
+                    className="inline-block mt-4 text-orange-500 font-semibold hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Project →
+                  </a>
                 </div>
               </div>
             ))}
           </div>
+        </section>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card shadow-lg p-4 rounded-4 border-0">
+              <h3 class="text-center mb-3 text-primary fw-bold">
+                College Information
+              </h3>
+
+              <hr />
+
+              <p>
+                <strong>🏫 College Name:</strong> ${rescult.collageName}
+              </p>
+              <p>
+                <strong>🎓 Degree:</strong> ${rescult.degree}
+              </p>
+              <p>
+                <strong>📅 Year:</strong> ${rescult.year}
+              </p>
+              <p>
+                <strong>👤 Age:</strong> ${rescult.age}
+              </p>
+
+              <div class="alert alert-info mt-3">
+                <strong>Status:</strong> ${rescult.status}
+              </div>
+
+              <div class="alert alert-success">
+                <strong>Remarks:</strong> ${rescult.remarks}
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };
