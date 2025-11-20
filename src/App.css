@@ -680,3 +680,9 @@ p {
 .portfolio-content a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: auto !important; /* Mobile par width apply NHI hogi */
+  }
+}
