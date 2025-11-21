@@ -2,6 +2,94 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
+import Api from "../Componets/Api.js";
+
+// Student numbers
+let studentdata = [1, 2];
+// Check even or odd
+for (let i = 0; i < studentdata.length; i++) {
+  if (studentdata[i] % 2 === 0) {
+    console.log(studentdata[i] + " is even.");
+  } else {
+    console.log(studentdata[i] + " is odd.");
+  }
+}
+// Students array
+let students = [
+  { name: "Amit", marks: 85 },
+  { name: "Riya", marks: 72 },
+  { name: "Rohan", marks: 58 },
+  { name: "Sonu", marks: 95 },
+  { name: "Vikas", marks: 45 },
+];
+
+// Print student grades
+for (let i = 0; i < students.length; i++) {
+  let student = students[i];
+  let grade = "";
+
+  if (student.marks >= 90 && student.marks <= 100) grade = "A+";
+  else if (student.marks >= 75 && student.marks <= 89) grade = "A";
+  else if (student.marks >= 60 && student.marks <= 74) grade = "B";
+  else if (student.marks >= 50 && student.marks <= 59) grade = "C";
+  else if (student.marks >= 0 && student.marks <= 49) grade = "F";
+
+  console.log(student.name + " → " + grade);
+}
+
+// Numbers to check even/odd
+let nuddms = [2, 7, 8, 13, 20, 21];
+for (let i = 0; i < nuddms.length; i++) {
+  console.log(nuddms[i]);
+  if (nuddms[i] % 2 === 0) {
+    console.log("The number is even.");
+  } else {
+    console.log("The number is odd.");
+  }
+}
+
+// Numbers to check size
+let numbers = [5, 10, 15, 20, 25];
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+  if (numbers[i] < 10) {
+    console.log("Small");
+  } else if (numbers[i] === 10) {
+    console.log("Equal");
+  } else {
+    console.log("Big");
+  }
+}
+
+// Names specific messages
+let names = ["Vikas", "Rahul", "Amit"];
+for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+  if (names[i] === "Vikas") {
+    console.log("Vikas ke sath ye kaam hoga!");
+  } else if (names[i] === "Rahul") {
+    console.log("Rahul ke sath ye kaam hoga!");
+  } else if (names[i] === "Amit") {
+    console.log("Amit ke sath ye kaam hoga!");
+  } else {
+    console.log("Unknown");
+  }
+}
+
+// Fruits specific messages
+let fruits = ["Apple", "Banana", "Mango", "Orange"];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+  if (fruits[i] === "Mango") {
+    console.log("I love Mango");
+  } else if (fruits[i] === "Banana") {
+    console.log("I love Banana");
+  } else if (fruits[i] === "Orange") {
+    console.log("I love Orange");
+  } else {
+    console.log("Ye fruit special nahi hai");
+  }
+}
 
 const collageInformation = () => {
   const collageName = "S.S. Jain Subodh PG College, Jaipur";
@@ -282,6 +370,7 @@ const Home = () => {
 
   return (
     <>
+      <Api /> {/* component use */}
       {/* <div className="container mt-5">
         <div className="row d-flex justify-content-center p-4 bg-light rounded shadow">
           <div className="col-sm-6 col-12">
@@ -307,7 +396,6 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-
       {/* <div className="container">
         <div className="row d-flex justify-content-center mt-5 p-4 bg-light rounded shadow">
           <div className="col-sm-6 col-12">
@@ -536,9 +624,7 @@ const Home = () => {
           </div>
         </section>
       </div>
-
       {/* work section */}
-
       <div id="protefolio">
         <section id="portfolio" className="px-10 py-20 bg-gray-50">
           <h2 className="text-3xl font-bold text-orange-500 mb-3">Portfolio</h2>
@@ -578,7 +664,6 @@ const Home = () => {
           </div>
         </section>
       </div>
-
       <div className="container mt-5">
         <div className="row justify-content-center">
           <div className="col-md-6">
