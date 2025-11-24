@@ -12,6 +12,7 @@ export default function FetchData() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
+  
   const filteredData = data.filter(
     (user) =>
       user.address.city.toLowerCase().includes(search.toLowerCase()) ||
