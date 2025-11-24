@@ -3,6 +3,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
 import Api from "../Componets/Api.js";
+// search array
+
+const fruitdds = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruitdds.includes("Mango")); // true
+console.log(fruitdds);
+
+const carsdara = () => {
+  const car = ["honda", ["maruti", "suzuki"], "Volvo"];
+  return car;
+};
+const carsss = carsdara();
+carsss.splice(1, 2);
+console.log(carsdara());
 
 // Student numbers
 let studentdata = [1, 2];

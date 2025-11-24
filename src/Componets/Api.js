@@ -12,14 +12,12 @@ export default function FetchData() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  
   const filteredData = data.filter(
     (user) =>
       user.address.city.toLowerCase().includes(search.toLowerCase()) ||
       user.address.zipcode.toLowerCase().includes(search.toLowerCase()) ||
       user.address.street.toLowerCase().includes(search.toLowerCase())
   );
-
   return (
     // serach box in css
     <div className="container mt-4">
