@@ -686,3 +686,11 @@ p {
     width: auto !important; /* Mobile par width apply NHI hogi */
   }
 }
+.card {
+  border-radius: 15px;
+}
+
+.card-body p {
+  margin-bottom: 6px;
+  font-size: 15px;
+}

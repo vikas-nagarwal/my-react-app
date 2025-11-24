@@ -3,6 +3,7 @@ import "../App.css";
 
 export default function FetchData() {
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -11,33 +12,70 @@ export default function FetchData() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  return (
-    <div>
-      {data.length > 0 ? (
-        data.map((user) => (
-          <div key={user.id}>
-            <h1>ID: {user.id}</h1>
-            <h1>Name: {user.name}</h1>
-            <h1>Username: {user.username}</h1>
-            <h1>Email: {user.email}</h1>
-            <h1>addresh: {user.address.street}</h1>
-            <h1>suite: {user.address.suite}</h1>
-            <h1>city: {user.address.city}</h1>
-            <h1>zipcode: {user.address.zipcode}</h1>
-            <h2>Latitude: {user.address.geo.lat}</h2>
-            <h2>Longitude: {user.address.geo.lng}</h2>
-            <h2>phone: {user.phone}</h2>
-            <h2>website: {user.website}</h2>
-            <h2>name: {user.company.name}</h2>
-            <h2>name: {user.company.catchPhrase}</h2>
-            <h2>name: {user.company.bs}</h2>
+  const filteredData = data.filter(
+    (user) =>
+      user.address.city.toLowerCase().includes(search.toLowerCase()) ||
+      user.address.zipcode.toLowerCase().includes(search.toLowerCase()) ||
+      user.address.street.toLowerCase().includes(search.toLowerCase())
+  );
 
-            <hr />
-          </div>
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
+  return (
+    // serach box in css
+    <div className="container mt-4">
+      <input
+        type="text"
+        placeholder="Search by city..."
+        className="form-control mb-4 searchBox"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+      <div className="row">
+        {filteredData.length > 0 ? (
+          filteredData.map((user) => (
+            // data.map((user) => (
+            <div key={user.id} className="col-md-3 col-12 mb-4">
+              <div className="card shadow-sm h-100">
+                <div className="card-body">
+                  <h5 className="card-title">ID: {user.id}</h5>
+                  <h6 className="card-subtitle mb-3 text-muted">
+                    {user.name} ({user.username})
+                  </h6>
+
+                  <p>
+                    <strong>Email:</strong> {user.email}
+                  </p>
+                  <p>
+                    <strong>City:</strong> {user.address.city}
+                  </p>
+                  <p>
+                    <strong>Street:</strong> {user.address.street}
+                  </p>
+                  <p>
+                    <strong>Zipcode:</strong> {user.address.zipcode}
+                  </p>
+
+                  <p>
+                    <strong>Phone:</strong> {user.phone}
+                  </p>
+                  <p>
+                    <strong>Website:</strong> {user.website}
+                  </p>
+
+                  <p>
+                    <strong>Company:</strong> {user.company.name}
+                  </p>
+                  <p>
+                    <strong>CatchPhrase:</strong> {user.company.catchPhrase}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 }
