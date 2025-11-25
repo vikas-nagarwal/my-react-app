@@ -3,6 +3,91 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
 import Api from "../Componets/Api.js";
+
+
+
+// Remove duplicate values.
+const numbecrs = [10, 20, 10, 30, 20, 40];
+const uniqueNumbers = [...new Set(numbecrs)];
+console.log(uniqueNumbers);
+
+// Merge two arrays. (concat)
+const numbdssfeddrs = ["vikas", "rohans", "sofhe", "dfe"];
+const sss = [30, 10, 20, 5];
+const childrsven = numbdssfeddrs.concat(sss);
+console.log(childrsven);
+
+// Merge two arrays. (concat)
+const numbdeddrs = [30, 10, 20, 5];
+const numbecddrs = [30, 10, 20, 5];
+const children = numbdeddrs.concat(numbecddrs);
+console.log(children);
+
+// Sort number in ascending order.
+const numbeddrs = [30, 10, 20, 5];
+numbeddrs.sort((a, b) => a - b); // Ascending order
+console.log(numbeddrs);
+
+// Sort latter in ascending order.
+const soetess = ["vikas", "ajay", "jacnu"];
+soetess.sort();
+console.log(soetess);
+
+// Reverse the array. (reverse)
+const reverss = ["vikas", "ajay", "janu"];
+reverss.reverse();
+console.log(reverss); // Output: ["janu", "ajay", "vikas"]
+
+// Convert array to string. (join)
+const nameeess = ["vikas", "ajay", "rahul"];
+const namesString = nameeess.join(); // ya join(", ") agar comma ke saath chahiye
+console.log(namesString);
+
+// Check if a value exists in an array. (includes)
+const namess = ["vikas", "ajay", "rahul"];
+console.log(namess.includes("ajay")); // true
+console.log(namess.includes("vikas")); // false
+console.log(namess.includes("vcikas")); // false
+
+const data = ["ajan", "mam", "dfdf"];
+console.log(data);
+
+// Remove the first element. (shift)
+const first = ["vikas", "ajay", "rahul", "sanjay"];
+first.shift();
+console.log(first);
+
+// Remove the last element. (pop)
+const removes = ["vikas", "ajay", "rahul", "sanjay"];
+removes.pop();
+console.log(removes);
+
+// Add a new element to the beginning. (unshift)
+const unshiffted = ["vikas", "ajay", "rahul", "sanjay"];
+unshiffted.unshift("rahul");
+unshiffted.unshift("deepak");
+console.log(unshiffted);
+
+// Add a new element to the end of an array. (push)
+const add = ["vikas", "ajay", "rahul", "sanjay"];
+add.push("rahul");
+console.log(add);
+// Access the first and last element of an array.
+const lengths = ["vikas", "ajay", "rahul", "sanjay"];
+const f = lengths[0];
+const last = lengths.at(-1);
+console.log(f, last);
+
+// Create an array of 5 numbers and print it.
+
+let numbersarray = [10, 20, 30, 40, 50];
+console.log(numbersarray);
+
+// Find the length of an array.
+
+const length = ["vikas", "ajay", "rahul", "sanjay"];
+console.log(length.length);
+
 // search array
 
 const fruitdds = ["Banana", "Orange", "Apple", "Mango"];
