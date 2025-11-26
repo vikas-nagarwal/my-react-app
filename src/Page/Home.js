@@ -3,8 +3,53 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
 import Api from "../Componets/Api.js";
+import Product from "../Componets/Product.js";
 
+let number1 = 17;
+let number2 = 5;
 
+let remainder = number1 % number2;
+
+console.log("Remainder:", remainder);
+
+function vikas() {
+  let a = 20;
+  let b = 30;
+
+  let add = a + b;
+  let sub = a - b;
+  let mult = a * b;
+  let div = a / b;
+  return `Sum: ${add}, Difference: ${sub}, Product: ${mult}, Division: ${div}`;
+}
+console.log(vikas());
+
+const schoolunifora = {
+  rahul: 20,
+  ajay: 25,
+};
+console.log(schoolunifora.rahul + schoolunifora.ajay);
+
+const schoolfess = {
+  rahul: 24,
+  sohan: 25,
+
+  check: function () {
+    if (this.rahul < 23) {
+      console.log("Rahul: true");
+    } else {
+      console.log("Rahul: false");
+    }
+
+    if (this.sohan < 23) {
+      console.log("Sohan: true");
+    } else {
+      console.log("Sohan: false");
+    }
+  },
+};
+
+schoolfess.check();
 
 // Remove duplicate values.
 const numbecrs = [10, 20, 10, 30, 20, 40];
@@ -468,6 +513,7 @@ const Home = () => {
 
   return (
     <>
+      <Product />
       <Api /> {/* component use */}
       {/* <div className="container mt-5">
         <div className="row d-flex justify-content-center p-4 bg-light rounded shadow">
