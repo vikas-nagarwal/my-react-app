@@ -6,7 +6,7 @@ import Api from "../Componets/Api.js";
 import Product from "../Componets/Product.js";
 
 let number1 = 17;
-let number2 = 57;
+let number2 = 573;
 
 let remainder = number1 % number2;
 
