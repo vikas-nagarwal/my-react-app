@@ -5,23 +5,78 @@ import "../wordhistory/css/wordhistory.css";
 import Api from "../Componets/Api.js";
 import Product from "../Componets/Product.js";
 
+function datascore() {
+  let score = Number(prompt(50));
+  if (score >= 90) {
+    return "A grade";
+  } else if (score >= 75) {
+    return "B grade";
+  } else if (score >= 50) {
+    return "c grade";
+  } else {
+    return "fail";
+  }
+}
+
+console.log(datascore());
+
+const user = { name: "Anmol", age: 25, country: "India" };
+const { name, age } = user;
+console.log(name, age); // 'Anmol'
+
+let a = 10;
+let b = 20;
+
+// == (equal to)
+console.log(10 == 20); // false
+console.log(10 == "10"); // true
+
+// === (equal value AND type)
+console.log(10 === 10); // true
+console.log(10 === "10"); // false
+
+// != (not equal)
+console.log(10 != 20); // true
+console.log(10 != 10); // false
+
+// !== (not equal OR type not equal)
+console.log(10 !== 10); // false
+console.log(10 !== "10"); // true
+console.log(10 !== 20); // true
+
+// > (greater than)
+console.log(10 > 20); // false
+console.log(20 > 10); // true
+
+// < (less than)
+console.log(10 < 20); // true
+console.log(20 < 10); // false
+
+// >= (greater than or equal to)
+console.log(10 >= 10); // true
+console.log(10 >= 20); // false
+
+// <= (less than or equal to)
+console.log(10 <= 10); // true
+console.log(20 <= 10); // false
+let y = 10;
+y += 3;
+console.log(y);
 let number1 = 17;
 let number2 = 573;
-
 let remainder = number1 % number2;
-
 console.log("Remainder:", remainder);
 
 function vikas() {
   let a = 20;
   let b = 30;
-
   let add = a + b;
-  let sub = a - b;
+  let sub = a - b; // ✔ Difference added
   let mult = a * b;
   let div = a / b;
   return `Sum: ${add}, Difference: ${sub}, Product: ${mult}, Division: ${div}`;
 }
+
 console.log(vikas());
 
 const schoolunifora = {
