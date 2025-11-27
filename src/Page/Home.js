@@ -12,7 +12,7 @@ function datascore() {
   } else if (score >= 75) {
     return "B grade";
   } else if (score >= 50) {
-    return "c grade";
+    return "c grcaffde";
   } else {
     return "fail";
   }
@@ -24,7 +24,7 @@ const user = { name: "Anmol", age: 25, country: "India" };
 const { name, age } = user;
 console.log(name, age); // 'Anmol'
 
-let a = 10;
+let a = 40;
 let b = 20;
 
 // == (equal to)
