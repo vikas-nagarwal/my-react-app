@@ -4,9 +4,12 @@ import "../App.css";
 import "../wordhistory/css/wordhistory.css";
 import Api from "../Componets/Api.js";
 import Product from "../Componets/Product.js";
+import Logindata from "../Componets/Api/Logindata.js";
+import DeleteUser from "../Componets/Api/Deleteapi.js";
 
+// login design
 function datascore() {
-  let score = Number(prompt(50));
+  let score = Number;
   if (score >= 90) {
     return "A grade";
   } else if (score >= 75) {
@@ -568,8 +571,10 @@ const Home = () => {
 
   return (
     <>
+    <DeleteUser/>
+      <Logindata />
       <Product />
-      <Api /> {/* component use */}
+      <Api />
       {/* <div className="container mt-5">
         <div className="row d-flex justify-content-center p-4 bg-light rounded shadow">
           <div className="col-sm-6 col-12">
