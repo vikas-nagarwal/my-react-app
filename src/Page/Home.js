@@ -6,6 +6,8 @@ import Api from "../Componets/Api.js";
 import Product from "../Componets/Product.js";
 import Logindata from "../Componets/Api/Logindata.js";
 import DeleteUser from "../Componets/Api/Deleteapi.js";
+import DelayApi from "../Componets/Api/Dealyapi.js";
+import Unknown from "../Componets/Api/Unknown.js";
 
 // login design
 function datascore() {
@@ -571,7 +573,9 @@ const Home = () => {
 
   return (
     <>
-    <DeleteUser/>
+      <Unknown />
+      <DelayApi />
+      <DeleteUser />
       <Logindata />
       <Product />
       <Api />

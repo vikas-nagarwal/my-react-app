@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import "../../App.css";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [token, setToken] = useState("");
-
   const correctPassword = "cityslicka";
 
   const handleLogin = async (e) => {

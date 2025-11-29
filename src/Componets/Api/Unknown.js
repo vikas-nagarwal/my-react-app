@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import "../App.css";
+import React from "react";
+import { useEffect } from "react";
+import "../../App.css";
 
-export default function FetchData() {
+function Unknown() {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
-    fetch("https://reqres.in/api/users?page=2")
+    fetch("https://reqres.in/api/unknown/2")
       .then((res) => res.json())
       .then((json) => setUsers(json?.data || [])) // safe: if undefined, set empty array
       .catch((err) => console.error("Error fetching data:", err));
@@ -18,14 +18,11 @@ export default function FetchData() {
       {users.length === 0 ? (
         <p>Loading...</p>
       ) : (
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>
-              {user.first_name} {user.last_name}
-            </li>
-          ))}
-        </ul>
+        
+          {users.map((user) => 
       )}
     </div>
   );
 }
+
+export default Unknown;
