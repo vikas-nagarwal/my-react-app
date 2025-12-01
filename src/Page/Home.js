@@ -8,7 +8,7 @@ import Logindata from "../Componets/Api/Logindata.js";
 import DeleteUser from "../Componets/Api/Deleteapi.js";
 import DelayApi from "../Componets/Api/Dealyapi.js";
 import Unknown from "../Componets/Api/Unknown.js";
-
+import Notfound from "../Componets/Api/Notfound.js";
 // login design
 function datascore() {
   let score = Number;
@@ -470,6 +470,7 @@ const Home = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [selectedUserId, setSelectedUserId] = useState(null);
 
   // ✅ Capitalize first letter of each word
   const capitalizeName = (name) => {
@@ -573,7 +574,16 @@ const Home = () => {
 
   return (
     <>
-      <Unknown />
+      <div>
+        <button onClick={handleClick}>Click Me</button>
+        <p>{text}</p>
+      </div>
+
+      <div>
+        <Unknown />
+      </div>
+      <Notfound />
+
       <DelayApi />
       <DeleteUser />
       <Logindata />
@@ -734,6 +744,12 @@ const Home = () => {
                 Let’s <span>Work Together</span>
               </h2>
 
+              <button
+                onClick={() => setSelectedUserId(23)} // Invalid user → 404
+                style={{ padding: "10px 20px", marginTop: "20px" }}
+              >
+                Show User
+              </button>
               <p className="superText">
                 Have an idea, project, or opportunity? I’m here to help you
                 build something amazing. Reach out and let’s turn your vision

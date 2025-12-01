@@ -3,9 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 
 function DelayApi() {
-  
-
-
   return (
     <div>
       <h1>software developer</h1>
