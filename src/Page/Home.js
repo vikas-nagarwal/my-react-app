@@ -9,6 +9,119 @@ import DeleteUser from "../Componets/Api/Deleteapi.js";
 import DelayApi from "../Componets/Api/Dealyapi.js";
 import Unknown from "../Componets/Api/Unknown.js";
 import Notfound from "../Componets/Api/Notfound.js";
+
+function marksss() {
+  let a = 23;
+  let b = 25;
+  let c = 30;
+
+  if (a > b) {
+    return "this is true";
+  }
+
+  if (c > b) {
+    return "this is true";
+  }
+
+  if (a > c) {
+    return "this is true";
+  } else if (a < b) {
+    return "this is not true";
+  } else if (c < b) {
+    return "this is not true";
+  } else if (a < c) {
+    return "this is not true";
+  }
+  return;
+}
+
+console.log(marksss());
+
+try {
+  let a = 10;
+  console.log(b); // b defined नहीं → error
+} catch (error) {
+  if (error instanceof ReferenceError) {
+    console.log("Reference Error caught:", error.message);
+  } else if (error instanceof TypeError) {
+    console.log("Type Error caught:", error.message);
+  } else {
+    console.log("Other Error caught:", error.message);
+  }
+}
+
+function myRoutine() {}
+try {
+  myRoutine();
+} catch (e) {
+  if (e instanceof RangeError) {
+    // statements to handle this very common expected error
+  } else {
+    throw e; // re-throw the error unchanged
+  }
+}
+
+try {
+  let a = 20;
+  console.log(a);
+} catch (err) {
+  console.log("Caught:", err.message);
+}
+
+try {
+  let x = 10;
+  let y = "hello";
+  let result = x / y; // invalid operation
+  console.log(result);
+} catch (error) {
+  console.log("Error caught:", error.message);
+}
+
+try {
+  let x = 10;
+  let y = "hello";
+  let result = x / y; // invalid operation
+  console.log(result);
+} catch (error) {
+  console.log("Error caught:", error.message);
+}
+
+try {
+  const data = JSON.parse("Hello"); // invalid JSON → error
+  console.log(data);
+} catch (error) {
+  console.log("Caught JSON Error:", error.message);
+}
+
+function changeColor() {}
+let timer = null;
+
+function handleButtonClick() {
+  if (timer) {
+    clearTimeout(timer);
+    timer = null;
+    alert("DOUBLE CLICK");
+  } else {
+    timer = setTimeout(() => {
+      alert("SINGLE CLICK");
+      timer = null;
+    }, 250);
+  }
+}
+
+const handleDoubleClick = () => {
+  alert("Double clicked!");
+};
+
+const myFunction = () => {
+  alert("Button ss!");
+};
+
+myFunction();
+const handleClick = () => {
+  console.log("Button clicked");
+};
+
 // login design
 function datascore() {
   let score = Number;
@@ -574,16 +687,29 @@ const Home = () => {
 
   return (
     <>
-      <div>
-        <button onClick={handleClick}>Click Me</button>
-        <p>{text}</p>
+      <div
+        onMouseOver={changeColor}
+        style={{ width: "200px", height: "100px", background: "lightblue" }}
+      >
+        Mouse Over Me
       </div>
 
+      <button onClick={handleButtonClick}>Click Me</button>
+      <div>
+        <button onDoubleClick={handleDoubleClick}>Double Click Me</button>
+      </div>
+
+      <div>
+        <button onClick={myFunction}>Click Me</button>
+      </div>
+      <div>
+        <button onClick={handleClick}>Click Me</button>
+        <p>hello</p>
+      </div>
       <div>
         <Unknown />
       </div>
       <Notfound />
-
       <DelayApi />
       <DeleteUser />
       <Logindata />
