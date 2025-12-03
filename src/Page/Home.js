@@ -10,6 +10,33 @@ import DelayApi from "../Componets/Api/Dealyapi.js";
 import Unknown from "../Componets/Api/Unknown.js";
 import Notfound from "../Componets/Api/Notfound.js";
 
+function details() {
+  const a = 10;
+  const c = 20;
+  const total = a + b;
+  console.log(total);
+}
+
+details();
+
+const day = 2;
+switch (day) {
+  case 1: {
+    const msg = "Monday";
+    console.log(msg);
+    break;
+  }
+  case 2: {
+    const msg = "Tuesday";
+    console.log(msg); // Tuesday
+    break;
+  }
+  default: {
+    const msg = "Unknown";
+    console.log(msg);
+  }
+}
+
 function marksss() {
   let a = 23;
   let b = 25;

@@ -4,7 +4,7 @@ import "../../App.css";
 function Unknown() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    console.log("USEEFFECT CHAL GAYA");
+    // console.log("USEEFFECT CHAL GAYA");
     fetch("https://reqres.in/api/unknown") // API call
       .then((res) => res.json()) // JSON me convert
 
