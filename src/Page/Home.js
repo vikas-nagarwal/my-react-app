@@ -9,14 +9,14 @@ import DeleteUser from "../Componets/Api/Deleteapi.js";
 import DelayApi from "../Componets/Api/Dealyapi.js";
 import Unknown from "../Componets/Api/Unknown.js";
 import Notfound from "../Componets/Api/Notfound.js";
+import { Bankdata } from "../Componets/Api/Bankdata.js";
 
 function details() {
   const a = 10;
-  const c = 20;
+  const b = 20;
   const total = a + b;
   console.log(total);
 }
-
 details();
 
 const day = 2;
@@ -736,6 +736,7 @@ const Home = () => {
       <div>
         <Unknown />
       </div>
+      <Bankdata/>
       <Notfound />
       <DelayApi />
       <DeleteUser />
