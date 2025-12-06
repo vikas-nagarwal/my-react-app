@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
+import { jsPDF } from "jspdf";
 
 // data calling
 
@@ -428,42 +429,64 @@ export const Bankdata = () => {
       address: "608 Oriental Court, Lemoyne, New Hampshire, 4285",
     },
   ];
+const MyTable = ({ data }) => {
+  const selectedItems = [data[1], data[4]];
+
+  const [search, setSearch] = useState("");
+
+  // 👉 Filter only selectedItems
+  const filteredItems = selectedItems.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+};
+
+
+
+  const downloadCSV = (item) => {
+    const headers = [
+      "Status",
+      "Balance",
+      "Age",
+      "Eye Color",
+      "Name",
+      "Gender",
+      "Company",
+      "Email",
+      "Phone",
+      "Address",
+    ];
+
+    const row = [
+      item.isActive ? "Active" : "Inactive",
+      item.balance,
+      item.age,
+      item.eyeColor,
+      item.name,
+      item.gender,
+      item.company,
+      item.email,
+      item.phone,
+      item.address,
+    ];
+
+    const csvContent = [headers, row]
+      .map((r) => r.map((f) => `"${f}"`).join(","))
+      .join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", `${item.name}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const selectedItems = [data[1], data[4]];
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredItems, setFilteredItems] = useState([]);
-
   return (
     <>
-      <div>
-        <form className="search-bar" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={handleInputChange}
-          />
-          <button type="submit">Search</button>
-        </form>
-        <ul className="item-list">
-          {searchQuery === "" ? (
-            itemList.map((item, index) => (
-              <li key={index}>
-                {item.name} - {item.price}
-              </li>
-            ))
-          ) : filteredItems.length > 0 ? (
-            filteredItems.map((item, index) => (
-              <li key={index}>
-                {item.name} - {item.price}
-              </li>
-            ))
-          ) : (
-            <li>No matching items found</li>
-          )}
-        </ul>
-      </div>
-
       <div className="container-fluid table-responsive">
         <table className="table table-striped table-bordered">
           <thead>
@@ -493,6 +516,9 @@ export const Bankdata = () => {
                 <td>{item.email}</td>
                 <td>{item.phone}</td>
                 <td>{item.address}</td>
+                <button onClick={downloadCSV} className="btn btn-success mb-3">
+                  Download CSV
+                </button>
               </tr>
             ))}
           </tbody>
