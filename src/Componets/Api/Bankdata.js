@@ -1,10 +1,185 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 import { jsPDF } from "jspdf";
 
-// data calling
+function calculateSalary() {
+  let salary = 4000;
+  let hra = 5000;
+  let bonus = 3000;
+  let tex = 8000;
+  salary += hra;
+  salary += bonus;
+  salary += tex;
+  return salary;
+}
+console.log("final salary", calculateSalary());
 
+function delivary() {
+  let OrderAmount = 450;
+  let priamyuse = false;
+  if (OrderAmount >= 500) {
+    return "delvary free";
+  } else if (OrderAmount < 500) {
+    return "delvary charge";
+  }
+}
+console.log(delivary());
+
+function temmm() {
+  let tem = 12;
+  if (tem < 15) {
+    return "too cold";
+  } else if (tem >= 15 && tem <= 30) {
+    return "normal";
+  } else {
+    return "hot";
+  }
+}
+
+console.log(temmm());
+
+function checkEntry() {
+  let age = 20;
+  let idCard = true;
+
+  if (age >= 18 && idCard == true) {
+    return "Entry Allowed";
+  } else {
+    return "Entry Denied";
+  }
+}
+
+console.log(checkEntry());
+
+function tempratore() {
+  let temp = 45;
+
+  if (temp >= 40) {
+    return "Too Hot";
+  } else if (temp >= 25) {
+    return "Normal";
+  } else {
+    return "Cold";
+  }
+}
+
+console.log(tempratore());
+
+function wallet() {
+  let amount = 1000;
+  amount += 200;
+  amount -= 150;
+  amount += 50;
+  return amount;
+}
+console.log(wallet());
+
+let recharge;
+
+let transactions = [-20, 5, 10, 10, -50, -50];
+
+for (let i = 0; i < transactions.length; i++) {
+  recharge += transactions[i];
+}
+
+console.log("Final Recharge Amount:", recharge);
+
+// let recharge = 300;
+// recharge -= 20;
+// recharge += 5;
+// recharge += 10;
+// recharge += 10;
+// recharge -= 50;
+// recharge -= 50;
+// console.log(recharge);
+
+// assigment operator
+function datshhet() {
+  let xx = 20;
+  xx += 5;
+  xx -= 3;
+  xx *= 2;
+  xx /= 2;
+  return xx;
+}
+console.log(datshhet());
+
+function checkGrade(marks) {
+  if (marks >= 90 && marks <= 100) {
+    return "A+";
+  } else if (marks >= 80 && marks <= 89) {
+    return "A";
+  } else if (marks >= 70 && marks <= 79) {
+    return "B";
+  } else if (marks >= 60 && marks <= 69) {
+    return "C";
+  } else if (marks < 50) {
+    return "Fail";
+  } else {
+    return "Invalid Marks";
+  }
+}
+
+checkGrade(95);
+
+let temp = 32;
+if (temp > 30) {
+  console.log("hot");
+} else if (temp >= 20 || temp >= 30) {
+  console.log("warm");
+} else if (temp < 20) {
+  console.log("cold");
+}
+
+function dataset() {
+  let salary = 18000;
+  let experience = 3;
+
+  if (salary < 20000 && experience > 2) {
+    return "Bonus Eligible";
+  } else {
+    return "Not Eligible";
+  }
+}
+
+dataset();
+
+function vikas() {
+  let score = 72;
+
+  if (score > 70) {
+    return "high";
+  } else if (score >= 40 && score <= 70) {
+    return "average";
+  } else {
+    return "low";
+  }
+}
+
+console.log(vikas());
+
+let x = 10;
+let y = 5;
+x += y;
+x -= y;
+x *= 2;
+x /= 3;
+console.log(x);
+let num1 = 20;
+let num2 = 6;
+
+console.log(num1 + num2); // Addition
+console.log(num1 - num2); // Subtraction
+console.log(num1 * num2); // Multiplication
+console.log(num1 % num2); // Modulus
+
+num1++; // Increment
+num1--; // Decrement
+
+console.log(num1); // num1 ko print karo
+
+// data calling
 export const Bankdata = () => {
   const data = [
     {
@@ -429,18 +604,16 @@ export const Bankdata = () => {
       address: "608 Oriental Court, Lemoyne, New Hampshire, 4285",
     },
   ];
-const MyTable = ({ data }) => {
-  const selectedItems = [data[1], data[4]];
+  const MyTable = ({ data }) => {
+    const selectedItems = [data[1], data[4]];
 
-  const [search, setSearch] = useState("");
+    const [search, setSearch] = useState("");
 
-  // 👉 Filter only selectedItems
-  const filteredItems = selectedItems.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
-  );
-};
-
-
+    // 👉 Filter only selectedItems
+    selectedItems.filter((item) =>
+      item.name.toLowerCase().includes(search.toLowerCase())
+    );
+  };
 
   const downloadCSV = (item) => {
     const headers = [
@@ -485,8 +658,27 @@ const MyTable = ({ data }) => {
   };
 
   const selectedItems = [data[1], data[4]];
+  const [search, setSearch] = useState("");
   return (
     <>
+      <div style={{ padding: "20px" }}>
+        <h2>Search Filter Table</h2>
+
+        {/* Search Box */}
+        <input
+          type="text"
+          placeholder="Search..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          style={{
+            padding: "8px",
+            marginBottom: "20px",
+            width: "250px",
+            fontSize: "16px",
+          }}
+        />
+      </div>
+
       <div className="container-fluid table-responsive">
         <table className="table table-striped table-bordered">
           <thead>
