@@ -10,6 +10,8 @@ import DelayApi from "../Componets/Api/Dealyapi.js";
 import Unknown from "../Componets/Api/Unknown.js";
 import Notfound from "../Componets/Api/Notfound.js";
 import { Bankdata } from "../Componets/Api/Bankdata.js";
+import Userapi from "../Componets/Api/Userapi.js";
+import Commentsapi from "../Componets/Api/Commentsapi.js";
 
 function details() {
   const a = 10;
@@ -714,6 +716,8 @@ const Home = () => {
 
   return (
     <>
+      <Commentsapi />
+      <Userapi />
       <div
         onMouseOver={changeColor}
         style={{ width: "200px", height: "100px", background: "lightblue" }}
@@ -736,7 +740,7 @@ const Home = () => {
       <div>
         <Unknown />
       </div>
-      <Bankdata/>
+      <Bankdata />
       <Notfound />
       <DelayApi />
       <DeleteUser />

@@ -3,6 +3,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 import { jsPDF } from "jspdf";
 
+function finallsalary() {
+  let basesalary = 2000;
+  let bonus = 3000;
+  let tex = 2500;
+
+  basesalary += bonus;
+  basesalary -= tex;
+  return basesalary;
+}
+console.log(finallsalary());
+
 function calculateSalary() {
   let salary = 4000;
   let hra = 5000;
@@ -659,6 +670,8 @@ export const Bankdata = () => {
 
   const selectedItems = [data[1], data[4]];
   const [search, setSearch] = useState("");
+  const [text, settext] = useState("");
+
   return (
     <>
       <div style={{ padding: "20px" }}>
