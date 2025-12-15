@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
+import "../../App.css";
 
-export default function FetchData() {
+function Product() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -29,3 +29,4 @@ export default function FetchData() {
     </div>
   );
 }
+export default Product;

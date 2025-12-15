@@ -6,27 +6,24 @@ function Commentsapi() {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((viks) => {
-        setUsers(viks);
-        console.log({ viks });
+      .then((data) => {
+        setUsers(data);
+        console.log({ data });
       });
   }, []);
+
   return (
-    (
-      <div className="container">
-        <div className="row">
-          <div className="col-6">
-            {users.map((item) => (
-              <div>
-                <h1 style={{ color: "green", fontSize: "10px" }}>
-                  {item.name}
-                </h1>
-              </div>
-            ))}
-          </div>
+    <div className="container">
+      <div className="row">
+        <div className="col-6">
+          {users.map((item) => (
+            <div>
+              <h1 style={{ color: "green", fontSize: "10px" }}>{item.name}</h1>
+            </div>
+          ))}
         </div>
       </div>
-    ).div$ * 4
+    </div>
   );
 }
 
