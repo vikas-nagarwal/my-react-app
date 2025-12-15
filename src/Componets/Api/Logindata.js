@@ -13,7 +13,6 @@ const Login = () => {
       setError("Please enter your email");
       return;
     }
-
     const emailPattern = /\S+@\S+\.\S+/;
     if (!emailPattern.test(email)) {
       setError("Please enter a valid email");

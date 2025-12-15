@@ -1,51 +1,83 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
-// function CreateUser() {
-//   const [name, setName] = useState("");
-//   const [job, setJob] = useState("");
-//   const [responseData, setResponseData] = useState(null);
+const Signupapi = () => {
+  const [email, setEmail] = useState("eve.holt@reqres.in"); // Default example
+  const [password, setPassword] = useState("pistol"); // Default example
+  const [responseMsg, setResponseMsg] = useState("");
 
-//   const handleSubmit = () => {
-//     fetch("https://reqres.in/api/users", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ name, job }),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         console.log(data);
-//         setResponseData(data); // Response ko state me save
-//       })
-//       .catch((err) => console.error("Error:", err));
-//   };
+  const handleSignup = async (e) => {
+    e.preventDefault();
 
-//   return (
-//     <div style={{ padding: "20px" }}>
-//       <h2>Create User (POST API)</h2>
-//       <input
-//         type="text"
-//         placeholder="Name"
-//         value={name}
-//         onChange={(e) => setName(e.target.value)}
-//         style={{ marginRight: "10px" }}
-//       />
-//       <input
-//         type="text"
-//         placeholder="Job"
-//         value={job}
-//         onChange={(e) => setJob(e.target.value)}
-//         style={{ marginRight: "10px" }}
-//       />
-//       <button onClick={handleSubmit}>Create User</button>
+    // 🔴 Email validation
+    if (!email) {
+      setResponseMsg("Email required");
+      return;
+    }
 
-//       {responseData && (
-//         <div style={{ marginTop: "20px" }}>
-//           <h3>Response from API:</h3>
-//           <pre>{JSON.stringify(responseData, null, 2)}</pre>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setResponseMsg("Enter a valid email address");
+      return;
+    }
 
-// export default CreateUser;
+    // 🔴 Password validation
+    if (!password) {
+      setResponseMsg("Password required");
+      return;
+    }
+
+    if (password.length < 6) {
+      setResponseMsg("Password must be at least 6 characters");
+      return;
+    }
+    try {
+      const res = await fetch("https://reqres.in/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "reqres_2eb0261795144183afefa1db80a78375",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setResponseMsg(`Signup Successful! Token: ${data.token}`);
+      } else {
+        setResponseMsg(`Error: ${data.error}`);
+      }
+    } catch (err) {
+      setResponseMsg("Something went wrong!");
+    }
+  };
+
+  return (
+    <div>
+      <h2>Signup Example</h2>
+      <form onSubmit={handleSignup}>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+        />
+        <br />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          required
+        />
+        <br />
+        <button type="submit">Signup</button>
+      </form>
+
+      {responseMsg && <p>{responseMsg}</p>}
+    </div>
+  );
+};
+
+export default Signupapi;
