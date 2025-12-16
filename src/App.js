@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Page/Home";
 import Header from "./Componets/Header";
+import Login from "./Componets/Api/Logindata";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             {/* Home as default route */}
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </div>

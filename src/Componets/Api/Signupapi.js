@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signupapi = () => {
   const [email, setEmail] = useState("eve.holt@reqres.in"); // Default example
   const [password, setPassword] = useState("pistol"); // Default example
   const [responseMsg, setResponseMsg] = useState("");
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -41,9 +43,13 @@ const Signupapi = () => {
       });
 
       const data = await res.json();
-
       if (res.ok) {
         setResponseMsg(`Signup Successful! Token: ${data.token}`);
+
+        // Redirect to LoginData screen
+        setTimeout(() => {
+          navigate("/logindata");
+        }, 1000); // 1 sec delay (optional)
       } else {
         setResponseMsg(`Error: ${data.error}`);
       }
