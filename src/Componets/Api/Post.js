@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 
@@ -7,13 +7,14 @@ function Post() {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data[0].title);
-        // console.log(data[1].title);
-        // console.log(data[3].body);
-        // console.log(data[4].title);
-        // console.log(data[4].body);
-        console.log(data.slice(39, 60));
-        return false;
+        console.log(data[0].title); // First post title
+
+        // Loop through all posts
+        for (let i = 0; i < data.length; i++) {
+          if (i % 2 === 0) {
+            console.log(data[i].title); // Even index post titles
+          }
+        }
       });
   }, []);
 
@@ -23,4 +24,5 @@ function Post() {
     </div>
   );
 }
+
 export default Post;
