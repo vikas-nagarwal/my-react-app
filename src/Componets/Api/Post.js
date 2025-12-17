@@ -7,7 +7,7 @@ function Post() {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data[0].title);
+        console.log(data[0].title);
         // console.log(data[1].title);
         // console.log(data[3].body);
         // console.log(data[4].title);
