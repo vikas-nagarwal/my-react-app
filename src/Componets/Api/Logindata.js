@@ -27,7 +27,6 @@ const Login = () => {
       setError("Incorrect password! Please try again.");
       return;
     }
-
     setError("");
 
     // ---------- API Call ----------
@@ -46,7 +45,6 @@ const Login = () => {
       if (response.ok) {
         // setToken(data.token);
         // alert("Login Successful! Token: " + data.token);
-
         setToken(data.token);
 
         window.location.href = "https://www.coderssphere.com";

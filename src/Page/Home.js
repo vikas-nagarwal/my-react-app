@@ -2,48 +2,104 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
-// import Logindata from "../Componets/Api/Logindata"; // ✅ CORRECT
-import Signupdata from "../Componets/Api/Signupapi"; // ✅ CORRECT
+import Signupdata from "../Componets/Api/Signupapi";
 import Logindata from "../Componets/Api/Logindata";
+import Post from "../Componets/Api/Post";
+
+/* ================= ARRAY MAX NUMBER ================= */
+
+let numbersMax = [10, 25, 5, 70, 45];
+let max = numbersMax[0];
+
+for (let i = 1; i < numbersMax.length; i++) {
+  if (numbersMax[i] > max) {
+    max = numbersMax[i];
+  }
+}
+console.log("Maximum number:", max);
+
+/* ================= EVEN / ODD ================= */
+
+function checkNumber(num) {
+  if (num % 2 === 0) {
+    console.log("Even Number");
+  } else {
+    console.log("Odd Number");
+  }
+}
+
+checkNumber(5);
+checkNumber(8);
+
+/* ================= TYPE CONVERSION ================= */
+
+let name = "vikas";
+let age = 20;
+let isStudent = true;
+
+let value = 20;
+console.log(typeof value); // number
+value = value.toString();
+console.log(typeof value); // string
+
+/* ================= FILTER NUMBERS ================= */
+
+let numbers = [5, 10, 15, 20, 25];
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 10) {
+    console.log(numbers[i]);
+  }
+}
+
+/* ================= == vs === ================= */
+
+let a = 100;
+let b = "20";
+
+if (a == b) {
+  console.log("Equal with ==");
+} else if (a === b) {
+  console.log("Equal with ===");
+} else {
+  console.log("Not Equal");
+}
+
+/* ================= EVEN NUMBERS ================= */
+
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
+
+/* ================= ARRAY BASICS ================= */
 
 let list = [1, 2, 3, 4, 5];
 console.log(list);
+console.log(list[0]);
+console.log(list[list.length - 1]);
 
-// array fist element print
-let lists = [1, 2, 3, 4, 5];
-console.log(lists[0]);
-console.log(lists[4]);
-console.log(lists.length);
-
-// Array ke sabhi elements ko console.log karo (loop use karke)
-let vikas = [10, 20, 30, 40, 50];
-for (let i = 0; i < vikas.length; i++) {
-  console.log(vikas[i]);
+for (let i = 0; i < list.length; i++) {
+  console.log(list[i]);
 }
 
-// Array me ek new element add karo (end me)
+list.push(6);
+console.log(list);
 
-let numbers = [1, 2, 3];
-numbers.push(4);
-console.log(numbers); // Output: [1, 2, 3, 4]
+list.pop();
+console.log(list);
 
-// Array se last element remove karo
-let arr = [10, 20, 30, 40];
-
-arr.pop();
-
-console.log(arr);
-// Output: [10, 20, 30]
-
-// Check karo koi value array me exist karti hai ya nahi
 let fruits = ["apple", "banana", "mango"];
-let hasBanana = fruits.includes("banana");
-console.log(hasBanana); // Output: true
+console.log(fruits.includes("banana"));
+
+/* ================= REACT COMPONENT ================= */
+
 const Home = () => {
   return (
     <>
-      <Signupdata />
-      <Logindata />
+      <Post />
+      {/* <Signupdata />
+      <Logindata /> */}
     </>
   );
 };
