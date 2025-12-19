@@ -2,9 +2,10 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 import "../wordhistory/css/wordhistory.css";
-import Signupdata from "../Componets/Api/Signupapi";
-import Logindata from "../Componets/Api/Logindata";
-import Post from "../Componets/Api/Post";
+import Products from "../Componets/Api/Products";
+// import Signupdata from "../Componets/Api/Signupapi";
+// import Logindata from "../Componets/Api/Logindata";
+// import Post from "../Componets/Api/Post";
 
 /* ================= ARRAY MAX NUMBER ================= */
 
@@ -97,9 +98,7 @@ console.log(fruits.includes("banana"));
 const Home = () => {
   return (
     <>
-      <Post />
-      {/* <Signupdata />
-      <Logindata /> */}
+      <Products />
     </>
   );
 };

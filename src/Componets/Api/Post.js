@@ -7,12 +7,10 @@ function Post() {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data[0].title); // First post title
-
-        // Loop through all posts
+        console.log(data[0].title);
         for (let i = 0; i < data.length; i++) {
           if (i % 2 === 0) {
-            console.log(data[i].title); // Even index post titles
+            console.log(data[i].title);
           }
         }
       });
